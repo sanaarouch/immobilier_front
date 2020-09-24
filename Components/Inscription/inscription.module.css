@@ -1,0 +1,34 @@
+.inscription {
+background-color: white;
+height: 700px;
+width: 600px;
+margin-left: 500px;
+padding-left: 150px;
+padding-top: 100px;
+}
+.inscription Button{
+    background-color:grey;
+    height: 8vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    border-style: hidden;
+}
+.inscription form input {
+    width: 20vw;
+    height:5vh;
+}
+
+.inscription form h3{
+    padding-left: 50px;
+}
+
+.check{
+ font-size: x-small;
+}
+.FormCheck{
+    size: x-small;
+    margin-left: 5px;
+}
+

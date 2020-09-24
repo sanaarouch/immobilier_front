@@ -1,0 +1,23 @@
+.home{
+    background-color: rgba(255, 255, 255, .4);
+    height: 800px;
+    width: 800px;
+    margin-left: 350px;
+    padding-left: 180px;
+    padding-top: 100px;
+    color:  black;
+    font-style: initial;
+}
+.home Button{
+    background-color: rgb(71, 143, 172);
+    margin-left: 130px;
+    border-radius: 5px;
+    height: 40px;
+    width: 180px;
+    padding-left:10px;
+    padding-right:10px;
+}
+.anim-appear {
+    opacity: 0.01;
+}
+   

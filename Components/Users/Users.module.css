@@ -1,0 +1,16 @@
+.users{
+    background-color: white;
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 1465px;
+    height: 800px;
+}
+.users h3{
+    margin-left:600px;
+}
+
+.users table{
+    margin-left: 30px;
+    width: 1400px;
+}

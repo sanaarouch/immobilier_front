@@ -1,0 +1,12 @@
+.footerPage{
+background-color:black;
+color:white;
+height: 50px;
+width: 1465px;
+text-align: center;
+padding-top: 10px;
+margin-left: 30px;
+margin-right: 30px;
+position: relative;
+bottom: 0;
+}

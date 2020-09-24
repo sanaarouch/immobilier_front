@@ -1,0 +1,29 @@
+.dashboard_container {
+    background: white;
+    width: 1600px;
+    height: 1700px;      
+}
+
+.dashboard_gestion{
+    width: '18rem';
+         
+}
+.dashboard_container Button{
+    background-color:grey;
+    height: 8vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    border-style: hidden;  
+
+}
+.dashboard_container h1{
+    margin-left:250px;
+}
+.Statistiques{
+    width: 700px;
+    height: 300px;
+    margin-left: 400px;
+
+}

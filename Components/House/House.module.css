@@ -1,0 +1,24 @@
+.house{
+   background-color: white;
+    border-radius: 5px;
+    height: 1600px;
+    width: 80%;
+    margin: 5px;
+    padding: 5px;
+    margin-left: 150px;
+    padding-left: 50px;
+}
+
+.house button{
+    background-color: rgb(71, 143, 172);
+    margin-left: 100px;
+    border-radius: 5px;
+    height: 40px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.Card {
+   flex-direction: initial;
+   display:flex;
+}

@@ -1,0 +1,29 @@
+.login {
+    background-color:white;
+    height: 600px;
+    width: 600px;
+    margin-left: 500px;
+    padding-left: 150px;
+    padding-top: 100px;
+}
+.login Button{
+    background-color:grey;
+    height: 8vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    border-style: hidden;
+
+}
+
+.login Form {
+    
+    width: 20vw;
+    height:5vh;
+   
+}
+
+.login form h3{
+    padding-left: 50px;
+}
