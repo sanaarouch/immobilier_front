@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { fetchProperties } from '../../store/actions/propertyActions';
 import './Home.css';
 
 const Home = () => {
@@ -8,33 +9,8 @@ const Home = () => {
   const { properties, loading, error } = useSelector(state => state.properties);
 
   useEffect(() => {
-    // Simulation de données pour commencer
-    dispatch({
-      type: 'FETCH_PROPERTIES_SUCCESS',
-      payload: [
-        {
-          id: 1,
-          title: 'Appartement moderne',
-          price: '250000€',
-          location: 'Paris',
-          image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400'
-        },
-        {
-          id: 2,
-          title: 'Maison familiale',
-          price: '450000€',
-          location: 'Lyon',
-          image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400'
-        },
-        {
-          id: 3,
-          title: 'Studio centre-ville',
-          price: '180000€',
-          location: 'Marseille',
-          image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400'
-        }
-      ]
-    });
+    // Charger les propriétés depuis l'API
+    dispatch(fetchProperties());
   }, [dispatch]);
 
   if (loading) {
@@ -97,8 +73,18 @@ const Home = () => {
                   <Card.Text className="text-muted">
                     {property.location}
                   </Card.Text>
+                  {property.description && (
+                    <Card.Text className="text-truncate">
+                      {property.description}
+                    </Card.Text>
+                  )}
                   <div className="mt-auto">
-                    <h5 className="text-primary mb-3">{property.price}</h5>
+                    <h5 className="text-primary mb-3">
+                      {typeof property.price === 'number' 
+                        ? `${property.price.toLocaleString('fr-FR')} €`
+                        : property.price
+                      }
+                    </h5>
                     <Button variant="outline-primary" className="w-100">
                       Voir les détails
                     </Button>

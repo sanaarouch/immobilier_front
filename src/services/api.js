@@ -1,13 +1,14 @@
 import axios from 'axios';
 
 // Configuration de base pour l'API
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
+  timeout: parseInt(process.env.REACT_APP_API_TIMEOUT) || 10000,
   headers: {
     'Content-Type': 'application/json',
+    'Accept': 'application/json',
   },
 });
 
@@ -43,11 +44,13 @@ api.interceptors.response.use(
 
 // Services API
 export const propertyService = {
-  getAll: () => api.get('/properties'),
+  getAll: (params = {}) => api.get('/properties', { params }),
   getById: (id) => api.get(`/properties/${id}`),
   create: (data) => api.post('/properties', data),
   update: (id, data) => api.put(`/properties/${id}`, data),
   delete: (id) => api.delete(`/properties/${id}`),
+  search: (searchParams) => api.get('/properties/search', { params: searchParams }),
+  getByLocation: (location) => api.get(`/properties/location/${location}`),
 };
 
 export const authService = {
@@ -55,6 +58,32 @@ export const authService = {
   register: (userData) => api.post('/auth/register', userData),
   logout: () => api.post('/auth/logout'),
   getProfile: () => api.get('/auth/profile'),
+  refreshToken: () => api.post('/auth/refresh'),
+  forgotPassword: (email) => api.post('/auth/forgot-password', { email }),
+  resetPassword: (token, password) => api.post('/auth/reset-password', { token, password }),
+};
+
+// Service pour les utilisateurs
+export const userService = {
+  getProfile: () => api.get('/users/profile'),
+  updateProfile: (data) => api.put('/users/profile', data),
+  getFavorites: () => api.get('/users/favorites'),
+  addFavorite: (propertyId) => api.post('/users/favorites', { propertyId }),
+  removeFavorite: (propertyId) => api.delete(`/users/favorites/${propertyId}`),
+};
+
+// Service pour les images
+export const imageService = {
+  upload: (file) => {
+    const formData = new FormData();
+    formData.append('image', file);
+    return api.post('/images/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  },
+  delete: (imageId) => api.delete(`/images/${imageId}`),
 };
 
 export default api;

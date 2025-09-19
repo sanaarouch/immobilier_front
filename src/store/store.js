@@ -2,33 +2,45 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
+import propertyReducer from './reducers/propertyReducer';
 
-// Reducer par défaut
-const initialState = {
-  properties: [],
+// Reducer pour l'authentification
+const authInitialState = {
+  user: null,
+  token: localStorage.getItem('authToken'),
+  isAuthenticated: false,
   loading: false,
-  error: null
+  error: null,
 };
 
-const propertiesReducer = (state = initialState, action) => {
+const authReducer = (state = authInitialState, action) => {
   switch (action.type) {
-    case 'FETCH_PROPERTIES_START':
+    case 'AUTH_START':
       return {
         ...state,
         loading: true,
-        error: null
+        error: null,
       };
-    case 'FETCH_PROPERTIES_SUCCESS':
+    case 'AUTH_SUCCESS':
       return {
         ...state,
         loading: false,
-        properties: action.payload
+        user: action.payload.user,
+        token: action.payload.token,
+        isAuthenticated: true,
+        error: null,
       };
-    case 'FETCH_PROPERTIES_ERROR':
+    case 'AUTH_ERROR':
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
+        isAuthenticated: false,
+      };
+    case 'LOGOUT':
+      return {
+        ...authInitialState,
+        token: null,
       };
     default:
       return state;
@@ -36,7 +48,8 @@ const propertiesReducer = (state = initialState, action) => {
 };
 
 const rootReducer = combineReducers({
-  properties: propertiesReducer
+  properties: propertyReducer,
+  auth: authReducer,
 });
 
 const middleware = [thunk];
