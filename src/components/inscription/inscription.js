@@ -49,11 +49,14 @@
 
    return (
      <section className={styles.inscription}>
+   )
+ }
 -      <Form onSubmit={handleSubmit}>
 +      <Form onSubmit={handleSubmit} className={styles.inscriptionForm}>
          <h3>S'inscrire</h3>
          
          {error && <Alert variant="danger">{error}</Alert>}
+         }
          
 -        <FormLabel>Nom</FormLabel>
 -        <FormControl
