@@ -26,8 +26,8 @@ const Login = () => {
       await dispatch(login({ email, password }));
       navigate('/');
     } catch (error) {
-      setError("Email ou mot de passe incorrect");
       console.error('Erreur de connexion:', error);
+      setError(error.response?.data?.message || "Email ou mot de passe incorrect");
     }
   };
 

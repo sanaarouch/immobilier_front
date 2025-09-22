@@ -26,7 +26,9 @@ const Home = () => {
     return (
       <Container className="text-center mt-5">
         <div className="alert alert-danger" role="alert">
-          Erreur: {error}
+          <h4>Problème de connexion à l'API</h4>
+          <p>Erreur: {error}</p>
+          <p>Vérifiez que votre serveur backend fonctionne sur <code>http://localhost:2200</code></p>
         </div>
       </Container>
     );

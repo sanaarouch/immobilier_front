@@ -21,8 +21,9 @@ export const login = (credentials) => {
       
       return response.data;
     } catch (error) {
+      console.error('Login error:', error.response?.data || error.message);
       dispatch(authError(
-        error.response?.data?.message || 'Erreur lors de la connexion'
+        error.response?.data?.message || `Erreur lors de la connexion: ${error.message}`
       ));
       throw error;
     }
