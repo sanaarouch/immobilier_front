@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Login.module.css';
-import { Button, Form, FormControl, FormLabel } from "react-bootstrap";
-import { useDispatch } from 'react-redux';
+import { Button, Form, FormControl, FormLabel, Alert } from "react-bootstrap";
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../store/actions/authActions';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loading } = useSelector(state => state.auth);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) return;
+    setError("");
+    
+    if (!email || !password) {
+      setError("Veuillez remplir tous les champs");
+      return;
+    }
     
     try {
       await dispatch(login({ email, password }));
       navigate('/');
     } catch (error) {
+      setError("Email ou mot de passe incorrect");
       console.error('Erreur de connexion:', error);
     }
   };
@@ -27,6 +35,9 @@ const Login = () => {
     <section className={styles.login}>
       <Form onSubmit={handleSubmit} className={styles.loginForm}>
         <h3>Se connecter</h3>
+        
+        {error && <Alert variant="danger">{error}</Alert>}
+        
         <div className={styles.formGroup}>
           <FormLabel>Email</FormLabel>
           <FormControl
@@ -46,8 +57,12 @@ const Login = () => {
             required
           />
         </div>
-        <Button type="submit" className={styles.submitButton}>
-          Connexion
+        <Button 
+          type="submit" 
+          className={styles.submitButton}
+          disabled={loading}
+        >
+          {loading ? 'Connexion...' : 'Connexion'}
         </Button>
       </Form>
     </section>
