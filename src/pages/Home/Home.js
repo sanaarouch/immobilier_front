@@ -9,7 +9,6 @@ const Home = () => {
   const { properties, loading, error } = useSelector(state => state.properties);
 
   useEffect(() => {
-    // Charger les propriétés depuis l'API
     dispatch(fetchProperties());
   }, [dispatch]);
 
@@ -23,7 +22,7 @@ const Home = () => {
     );
   }
 
-  if (error) {
+  if (error && properties.length === 0) {
     return (
       <Container className="text-center mt-5">
         <div className="alert alert-danger" role="alert">
@@ -54,6 +53,15 @@ const Home = () => {
       </div>
 
       <Container className="py-5">
+        {error && (
+          <Row className="mb-3">
+            <Col>
+              <div className="alert alert-warning" role="alert">
+                API non disponible - Affichage des données de démonstration
+              </div>
+            </Col>
+          </Row>
+        )}
         <Row className="mb-4">
           <Col>
             <h2 className="text-center">Nos dernières propriétés</h2>
