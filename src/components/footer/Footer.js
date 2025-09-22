@@ -99,32 +99,3 @@ const Footer = () => {
 };
 
 export default Footer;
-          </Col>
-          <Col md={3}>
-            <h6>Liens utiles</h6>
-            <ul className="list-unstyled">
-              <li><a href="/" className="text-light">Accueil</a></li>
-              <li><a href="/properties" className="text-light">Propriétés</a></li>
-              <li><a href="/contact" className="text-light">Contact</a></li>
-            </ul>
-          </Col>
-          <Col md={3}>
-            <h6>Contact</h6>
-            <p>
-              Email: contact@immobilier.com<br />
-              Téléphone: 01 23 45 67 89
-            </p>
-          </Col>
-        </Row>
-        <hr className="my-3" />
-        <Row>
-          <Col className="text-center">
-            <p>&copy; 2024 Immobilier Sur Mesure. Tous droits réservés.</p>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
-  );
-};
-
-export default Footer;
