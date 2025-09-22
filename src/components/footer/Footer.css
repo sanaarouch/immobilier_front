@@ -18,7 +18,7 @@
 .footer-content {
   position: relative;
   z-index: 1;
-  padding: 2rem 0 !important;
+  padding: 1rem 0 !important;
 }
 
 .footer-brand h4 {
@@ -26,18 +26,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 1.25rem;
-  margin-bottom: 1rem !important;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem !important;
 }
 
 .footer-brand p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem !important;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem !important;
   line-height: 1.4;
 }
 
 .footer-links li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
   transition: all 0.3s ease;
 }
 
@@ -67,12 +67,12 @@
 }
 
 .social-links {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .social-btn {
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -88,13 +88,13 @@
 }
 
 .contact-info {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .contact-item a {
@@ -114,12 +114,12 @@
 .footer-bottom {
   background: rgba(0, 0, 0, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1rem 0 !important;
+  padding: 0.5rem 0 !important;
 }
 
 .footer-bottom p {
   margin-bottom: 0;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 768px) {

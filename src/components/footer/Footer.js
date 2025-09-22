@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <footer className="custom-footer text-light mt-5">
       <Container>
-        <div className="footer-content py-3">
-          <Row className="g-4">
+        <div className="footer-content">
+          <Row className="g-2">
             <Col lg={4} md={6}>
               <div className="footer-brand">
                 <h4 className="fw-bold">
@@ -16,8 +16,7 @@ const Footer = () => {
                   Immobilier Sur Mesure
                 </h4>
                 <p className="text-muted">
-                  Votre partenaire de confiance pour tous vos projets immobiliers. 
-                  Nous vous accompagnons dans tous vos projets immobiliers.
+                  Votre partenaire immobilier de confiance.
                 </p>
                 <div className="social-links">
                   <Button variant="outline-primary" size="sm" className="social-btn me-2">
@@ -36,23 +35,21 @@ const Footer = () => {
               </div>
             </Col>
             
-            <Col lg={2} md={6}>
+            <Col lg={3} md={6}>
               <h6 className="fw-bold mb-2 text-primary">Navigation</h6>
               <ul className="list-unstyled footer-links">
                 <li><a href="/" className="text-muted">Accueil</a></li>
                 <li><a href="/properties" className="text-muted">Propriétés</a></li>
                 <li><a href="/contact" className="text-muted">Contact</a></li>
-                <li><a href="/about" className="text-muted">À propos</a></li>
               </ul>
             </Col>
             
-            <Col lg={3} md={6}>
+            <Col lg={2} md={6}>
               <h6 className="fw-bold mb-2 text-primary">Services</h6>
               <ul className="list-unstyled footer-links">
-                <li><a href="#" className="text-muted">Achat immobilier</a></li>
-                <li><a href="#" className="text-muted">Vente immobilier</a></li>
+                <li><a href="#" className="text-muted">Achat</a></li>
+                <li><a href="#" className="text-muted">Vente</a></li>
                 <li><a href="#" className="text-muted">Location</a></li>
-                <li><a href="#" className="text-muted">Gestion locative</a></li>
               </ul>
             </Col>
             
@@ -61,7 +58,7 @@ const Footer = () => {
               <div className="contact-info">
                 <div className="contact-item">
                   <FaMapMarkerAlt className="text-primary me-2" />
-                  <span className="text-muted">123 Av. Champs-Élysées<br />75008 Paris</span>
+                  <span className="text-muted">Paris 75008</span>
                 </div>
                 <div className="contact-item">
                   <FaPhone className="text-primary me-2" />
@@ -87,7 +84,7 @@ const Footer = () => {
             </Col>
             <Col md={6} className="text-md-end">
               <p className="text-muted">
-                Fait avec <FaHeart className="text-danger mx-1" /> par notre équipe
+                Fait avec <FaHeart className="text-danger" /> par notre équipe
               </p>
             </Col>
           </Row>
