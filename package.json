@@ -3,34 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@progress/kendo-react-dialogs": "^3.14.0",
-    "@progress/kendo-react-dropdowns": "^3.14.0",
-    "@progress/kendo-react-intl": "^3.14.0",
-    "@progress/kendo-react-layout": "^3.14.0",
-    "@progress/kendo-scheduler-react-wrapper": "^2019.4.1014",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.5.0",
-    "link-react": "^3.0.0",
-    "mdbreact": "^4.27.0",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-    "react-bootstrap-table": "^4.3.1",
-    "react-chartjs-2": "^2.9.0",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.10.0",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "react-social-login-buttons": "^3.1.0",
-    "reactstrap": "^8.4.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "@reduxjs/toolkit": "^1.9.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.3.0",
+    "bootstrap": "^5.2.3",
+    "chart.js": "^4.2.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,8 +41,7 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools": "^3.5.0",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-logger": "^3.0.6"
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
   }
 }
