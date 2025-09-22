@@ -20,9 +20,9 @@ export const fetchProperties = (params = {}) => {
       const response = await propertyService.getAll(params);
       dispatch(fetchPropertiesSuccess(response.data));
     } catch (error) {
-      // En cas d'erreur API, utiliser les données de démonstration
       console.warn('API non disponible, utilisation des données de démonstration');
-      dispatch(fetchPropertiesSuccess([])); // Le reducer utilisera les données par défaut
+      // En cas d'erreur API, utiliser les données par défaut du reducer
+      dispatch(fetchPropertiesError('API non disponible'));
     }
   };
 };

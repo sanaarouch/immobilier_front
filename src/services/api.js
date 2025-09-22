@@ -42,7 +42,7 @@ api.interceptors.response.use(
   }
 );
 
-// Services API
+// Services API pour les propriétés
 export const propertyService = {
   getAll: (params = {}) => api.get('/properties', { params }),
   getById: (id) => api.get(`/properties/${id}`),
@@ -53,6 +53,7 @@ export const propertyService = {
   getByLocation: (location) => api.get(`/properties/location/${location}`),
 };
 
+// Services API pour l'authentification
 export const authService = {
   login: (credentials) => api.post('/auth/login', credentials),
   register: (userData) => api.post('/auth/register', userData),
