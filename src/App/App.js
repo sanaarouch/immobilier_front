@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import store from '../store/store';
-import Home from '../pages/Home/Home';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import Login from '../components/Login/Login';
-import Inscription from '../components/Inscription/inscription';
-import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
+import Home from '../pages/home/Home';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
+import Login from '../components/login/Login';
+import Inscription from '../components/inscription/inscription';
+import ErrorBoundary from '../components/errorboundary/ErrorBoundary';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
