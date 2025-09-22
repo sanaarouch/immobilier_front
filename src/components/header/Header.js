@@ -1,14 +1,24 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../store/actions/authActions';
 
 const Header = () => {
+  const { isAuthenticated, user } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand>Parc Immobilier</Navbar.Brand>
+          <Navbar.Brand>Immobilier Sur Mesure</Navbar.Brand>
         </LinkContainer>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -19,8 +29,27 @@ const Header = () => {
               <Nav.Link>Propriétés</Nav.Link>
             </LinkContainer>
           </Nav>
+          
           <Nav>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+            {isAuthenticated ? (
+              <>
+                <Nav.Link disabled>
+                  Bonjour {user?.name || user?.email}
+                </Nav.Link>
+                <Button variant="outline-light" onClick={handleLogout}>
+                  Déconnexion
+                </Button>
+              </>
+            ) : (
+              <>
+                <LinkContainer to="/login">
+                  <Nav.Link>Connexion</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/inscription">
+                  <Nav.Link>Inscription</Nav.Link>
+                </LinkContainer>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

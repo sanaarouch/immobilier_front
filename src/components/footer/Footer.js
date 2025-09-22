@@ -7,30 +7,29 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={6}>
-            <h5>Parc Immobilier sur Mesure</h5>
-            <p>Votre partenaire immobilier de confiance depuis 20 ans.</p>
+            <h5>Immobilier Sur Mesure</h5>
+            <p>Votre partenaire de confiance pour tous vos projets immobiliers.</p>
+          </Col>
+          <Col md={3}>
+            <h6>Liens utiles</h6>
+            <ul className="list-unstyled">
+              <li><a href="/" className="text-light">Accueil</a></li>
+              <li><a href="/properties" className="text-light">Propriétés</a></li>
+              <li><a href="/contact" className="text-light">Contact</a></li>
+            </ul>
           </Col>
           <Col md={3}>
             <h6>Contact</h6>
             <p>
-              9 rue Paul Gauguin<br />
-              Pontoise, France<br />
-              01 30 32 86 30
+              Email: contact@immobilier.com<br />
+              Téléphone: 01 23 45 67 89
             </p>
           </Col>
-          <Col md={3}>
-            <h6>Services</h6>
-            <ul className="list-unstyled">
-              <li>Achat</li>
-              <li>Vente</li>
-              <li>Construction</li>
-            </ul>
-          </Col>
         </Row>
-        <hr />
+        <hr className="my-3" />
         <Row>
           <Col className="text-center">
-            <p>&copy; {new Date().getFullYear()} Parc Immobilier sur Mesure. Tous droits réservés.</p>
+            <p>&copy; 2024 Immobilier Sur Mesure. Tous droits réservés.</p>
           </Col>
         </Row>
       </Container>

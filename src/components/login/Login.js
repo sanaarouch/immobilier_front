@@ -25,27 +25,28 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className={styles.loginForm}>
         <h3>Se connecter</h3>
-        <br />
-        <FormLabel>Email</FormLabel>
-        <FormControl
-          autoFocus
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br />
-        <FormLabel>Mot de passe</FormLabel>
-        <FormControl
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          required
-        />
-        <br />
-        <Button type="submit" block>
+        <div className={styles.formGroup}>
+          <FormLabel>Email</FormLabel>
+          <FormControl
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <FormLabel>Mot de passe</FormLabel>
+          <FormControl
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            required
+          />
+        </div>
+        <Button type="submit" className={styles.submitButton}>
           Connexion
         </Button>
       </Form>
