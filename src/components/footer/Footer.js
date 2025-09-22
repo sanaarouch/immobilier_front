@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaBuilding } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaBuilding } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -43,16 +43,16 @@ const Footer = () => {
           {/* Social Links */}
           <Col lg={2} md={6}>
             <div className="d-flex justify-content-center justify-content-lg-end">
-              <a href="#" className="social-link me-2">
+              <a href="javascript:void(0)" className="social-link" aria-label="Facebook">
                 <FaFacebookF size={14} />
               </a>
-              <a href="#" className="social-link me-2">
+              <a href="javascript:void(0)" className="social-link" aria-label="Twitter">
                 <FaTwitter size={14} />
               </a>
-              <a href="#" className="social-link me-2">
+              <a href="javascript:void(0)" className="social-link" aria-label="LinkedIn">
                 <FaLinkedinIn size={14} />
               </a>
-              <a href="#" className="social-link">
+              <a href="javascript:void(0)" className="social-link" aria-label="Instagram">
                 <FaInstagram size={14} />
               </a>
             </div>

@@ -37,6 +37,26 @@ const Header = () => {
               <LinkContainer to="/">
                 <Nav.Link className="nav-link-compact">
                   <FaHome className="me-1" size={14} />
+                  Accueil
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/properties">
+                <Nav.Link className="nav-link-compact">
+                  <FaBuilding className="me-1" size={14} />
+                  Propriétés
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/contact">
+                <Nav.Link className="nav-link-compact">
+                  <FaEnvelope className="me-1" size={14} />
+                  Contact
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+          </Col>
+          
+          {/* Section Authentification */}
+          <Col lg={5} md={4} className="d-flex justify-content-end align-items-center">
             {isAuthenticated ? (
               <div className="d-flex align-items-center">
                 <div className="user-info me-3">
