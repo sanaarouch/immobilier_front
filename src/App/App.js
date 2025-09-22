@@ -6,6 +6,7 @@ import store from '../store/store';
 import Home from '../pages/home/Home';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
+import PropertyDetail from '../pages/property/PropertyDetail';
 import Login from '../components/login/Login';
 import Inscription from '../components/inscription/inscription';
 import ErrorBoundary from '../components/errorboundary/ErrorBoundary';
@@ -23,6 +24,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/properties" element={<Home />} />
+                <Route path="/property/:id" element={<PropertyDetail />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/inscription" element={<Inscription />} />
                 <Route path="*" element={

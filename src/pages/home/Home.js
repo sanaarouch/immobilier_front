@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { fetchProperties } from '../../store/actions/propertyActions';
 import SearchModal from '../../components/search/SearchModal';
 import './Home.css';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { properties, loading, error } = useSelector(state => state.properties);
   const [showSearchModal, setShowSearchModal] = React.useState(false);
   const [filteredProperties, setFilteredProperties] = React.useState([]);
@@ -156,7 +158,11 @@ const Home = () => {
                         : property.price
                       }
                     </h5>
-                    <Button variant="outline-primary" className="w-100">
+                    <Button 
+                      variant="outline-primary" 
+                      className="w-100"
+                      onClick={() => navigate(`/property/${property.id}`)}
+                    >
                       Voir les détails
                     </Button>
                   </div>

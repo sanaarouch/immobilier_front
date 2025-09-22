@@ -1,0 +1,34 @@
+.property-detail {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.feature-box {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  margin-bottom: 0.5rem;
+}
+
+.feature-box .text-primary {
+  font-size: 1.5rem;
+}
+
+.carousel-item img {
+  border-radius: 8px;
+}
+
+.sticky-top {
+  position: sticky !important;
+}
+
+@media (max-width: 768px) {
+  .sticky-top {
+    position: relative !important;
+  }
+  
+  .feature-box {
+    padding: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+}
