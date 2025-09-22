@@ -55,15 +55,6 @@ const Home = () => {
       </div>
 
       <Container className="py-5">
-        {error && (
-          <Row className="mb-3">
-            <Col>
-              <div className="alert alert-warning" role="alert">
-                API non disponible - Affichage des données de démonstration
-              </div>
-            </Col>
-          </Row>
-        )}
         <Row className="mb-4">
           <Col>
             <h2 className="text-center">Nos dernières propriétés</h2>

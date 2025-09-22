@@ -3,31 +3,54 @@ import axios from 'axios';
 // Configuration de base pour l'API
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
 
+// Mode développement sans backend
+const MOCK_MODE = true;
+
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
+  timeout: 5000,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
   },
 });
 
-// Fonction pour vérifier si le backend est disponible
-const isBackendAvailable = async () => {
-  try {
-    await api.get('/health', { timeout: 2000 });
-    return true;
-  } catch (error) {
-    console.warn('Backend non disponible, utilisation du mode mock');
-    return false;
-  }
-};
-
 // Données mock pour le développement
 const mockData = {
-  houses: [
-    { id: 1, title: 'Maison moderne', price: 250000, location: 'Paris', type: 'Maison' },
-    { id: 2, title: 'Appartement centre-ville', price: 180000, location: 'Lyon', type: 'Appartement' },
+  properties: [
+    {
+      id: 1,
+      title: "Appartement moderne",
+      price: 400000,
+      location: "Paris 15ème",
+      description: "Magnifique appartement de 95m² avec 3 pièces et 2 chambres",
+      image: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 95,
+      rooms: 3,
+      bedrooms: 2
+    },
+    {
+      id: 2,
+      title: "Studio lumineux",
+      price: 85000,
+      location: "Nice Centre",
+      description: "Studio de 21m² parfaitement rénové, idéal investissement",
+      image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 21,
+      rooms: 1,
+      bedrooms: 0
+    },
+    {
+      id: 3,
+      title: "Villa avec piscine",
+      price: 800000,
+      location: "Cannes",
+      description: "Villa de 150m² avec piscine et accès direct à la plage",
+      image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 150,
+      rooms: 5,
+      bedrooms: 4
+    }
   ],
   user: { id: 1, name: 'Utilisateur Test', email: 'test@example.com' }
 };
@@ -35,7 +58,9 @@ const mockData = {
 // Intercepteur pour les requêtes
 api.interceptors.request.use(
   (config) => {
-    console.log('API Request:', config.method?.toUpperCase(), config.url, config.data);
+    if (!MOCK_MODE) {
+      console.log('API Request:', config.method?.toUpperCase(), config.url, config.data);
+    }
     // Ajouter le token d'authentification si disponible
     const token = localStorage.getItem('authToken');
     if (token) {
@@ -52,7 +77,9 @@ api.interceptors.request.use(
 // Intercepteur pour les réponses
 api.interceptors.response.use(
   (response) => {
-    console.log('API Response:', response.status, response.data);
+    if (!MOCK_MODE) {
+      console.log('API Response:', response.status, response.data);
+    }
     return response;
   },
   (error) => {
@@ -75,12 +102,16 @@ api.interceptors.response.use(
 // Services API pour les propriétés
 export const propertyService = {
   getAll: async (params = {}) => {
+    if (MOCK_MODE) {
+      console.log('Mode mock: Chargement des propriétés de démonstration');
+      return { data: mockData.properties };
+    }
     try {
       return await api.get('/houses', { params });
     } catch (error) {
       if (error.code === 'ECONNREFUSED' || error.message === 'Network Error') {
         console.log('Utilisation des données mock pour les propriétés');
-        return { data: mockData.houses };
+        return { data: mockData.properties };
       }
       throw error;
     }
@@ -90,7 +121,7 @@ export const propertyService = {
       return await api.get(`/houses/${id}`);
     } catch (error) {
       if (error.code === 'ECONNREFUSED' || error.message === 'Network Error') {
-        const house = mockData.houses.find(h => h.id === parseInt(id));
+        const house = mockData.properties.find(h => h.id === parseInt(id));
         return { data: house || null };
       }
       throw error;
@@ -106,6 +137,13 @@ export const propertyService = {
 // Services API pour l'authentification
 export const authService = {
   login: async (email, password) => {
+    if (MOCK_MODE) {
+      console.log('Mode mock: Tentative de connexion');
+      if (email === 'test@example.com' && password === 'password') {
+        return { data: { token: 'mock-token-123', user: mockData.user } };
+      }
+      throw new Error('Email ou mot de passe incorrect');
+    }
     try {
       return await api.post('/auth/signin', { email, password });
     } catch (error) {
@@ -127,6 +165,10 @@ export const authService = {
     }
   },
   register: async (userData) => {
+    if (MOCK_MODE) {
+      console.log('Mode mock: Inscription simulée');
+      return { data: { token: 'mock-token-123', user: { ...userData, id: Date.now() } } };
+    }
     try {
       return await api.post('/auth/signup', userData);
     } catch (error) {
