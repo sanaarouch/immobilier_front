@@ -43,16 +43,16 @@ const Footer = () => {
           {/* Social Links */}
           <Col lg={2} md={6}>
             <div className="d-flex justify-content-center justify-content-lg-end">
-              <a href="javascript:void(0)" className="social-link" aria-label="Facebook">
+              <a href="#" className="social-link" aria-label="Facebook">
                 <FaFacebookF size={14} />
               </a>
-              <a href="javascript:void(0)" className="social-link" aria-label="Twitter">
+              <a href="#" className="social-link" aria-label="Twitter">
                 <FaTwitter size={14} />
               </a>
-              <a href="javascript:void(0)" className="social-link" aria-label="LinkedIn">
+              <a href="#" className="social-link" aria-label="LinkedIn">
                 <FaLinkedinIn size={14} />
               </a>
-              <a href="javascript:void(0)" className="social-link" aria-label="Instagram">
+              <a href="#" className="social-link" aria-label="Instagram">
                 <FaInstagram size={14} />
               </a>
             </div>
