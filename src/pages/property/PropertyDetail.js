@@ -142,6 +142,150 @@ const PropertyDetail = () => {
         phone: "04 93 99 88 77",
         email: "sophie.leroy@immobilier.com"
       }
+    },
+    4: {
+      id: 4,
+      title: "Appartement avec terrasse",
+      price: 520000,
+      location: "Lyon 6ème",
+      address: "45 Cours Franklin Roosevelt, 69006 Lyon",
+      description: "Superbe appartement de 110m² situé dans le prestigieux 6ème arrondissement de Lyon. Cet appartement d'exception dispose d'une magnifique terrasse de 30m² avec vue panoramique sur la ville et les collines lyonnaises. Entièrement rénové avec des matériaux haut de gamme, il offre des prestations exceptionnelles dans un quartier recherché proche du Parc de la Tête d'Or.",
+      surface: 110,
+      rooms: 4,
+      bedrooms: 3,
+      bathrooms: 2,
+      floor: 5,
+      elevator: true,
+      balcony: true,
+      parking: true,
+      energyClass: "B",
+      yearBuilt: 1970,
+      yearRenovated: 2022,
+      charges: 200,
+      propertyTax: 1800,
+      terraceSize: 30,
+      features: [
+        "Terrasse 30m² avec vue panoramique",
+        "Cuisine ouverte équipée haut de gamme",
+        "Parquet chêne massif",
+        "Climatisation réversible",
+        "Dressing dans chambre principale",
+        "Cave et parking sécurisé",
+        "Gardien et digicode",
+        "Proche métro et commerces",
+        "Double vitrage phonique",
+        "Volets électriques"
+      ],
+      images: [
+        "https://images.pexels.com/photos/2029541/pexels-photo-2029541.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ],
+      agent: {
+        name: "Jean Dupont",
+        phone: "04 78 92 15 47",
+        email: "jean.dupont@immobilier.com"
+      }
+    },
+    5: {
+      id: 5,
+      title: "Loft industriel",
+      price: 680000,
+      location: "Marseille Vieux-Port",
+      address: "8 Rue de la République, 13001 Marseille",
+      description: "Magnifique loft industriel de 130m² situé dans un ancien entrepôt du 19ème siècle entièrement rénové. Avec ses 4 mètres de hauteur sous plafond et ses poutres métalliques apparentes, ce bien d'exception offre un cadre de vie unique au cœur du Vieux-Port de Marseille. Les grandes verrières apportent une luminosité exceptionnelle tout au long de la journée.",
+      surface: 130,
+      rooms: 3,
+      bedrooms: 2,
+      bathrooms: 2,
+      floor: 1,
+      elevator: true,
+      balcony: false,
+      parking: false,
+      energyClass: "C",
+      yearBuilt: 1890,
+      yearRenovated: 2021,
+      charges: 120,
+      propertyTax: 2200,
+      ceilingHeight: "4m",
+      features: [
+        "Hauteur sous plafond 4 mètres",
+        "Poutres métalliques apparentes",
+        "Grandes verrières industrielles",
+        "Sol béton ciré",
+        "Cuisine américaine design",
+        "Mezzanine bureau",
+        "Salle de bain avec douche italienne",
+        "Chauffage au sol",
+        "Fibre optique",
+        "Proche Vieux-Port et transports"
+      ],
+      images: [
+        "https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ],
+      agent: {
+        name: "Amélie Moreau",
+        phone: "04 91 54 32 18",
+        email: "amelie.moreau@immobilier.com"
+      }
+    },
+    6: {
+      id: 6,
+      title: "Villa contemporaine",
+      price: 1200000,
+      location: "Saint-Tropez",
+      address: "Chemin des Salins, 83990 Saint-Tropez",
+      description: "Villa d'architecte contemporaine de 200m² offrant une vue mer exceptionnelle sur le golfe de Saint-Tropez. Cette propriété d'exception dispose d'une piscine à débordement infinity de 12x6m, d'un jardin méditerranéen de 800m² et d'une terrasse panoramique de 100m². Conçue par un architecte renommé, elle allie design moderne et confort absolu dans un cadre idyllique.",
+      surface: 200,
+      rooms: 6,
+      bedrooms: 5,
+      bathrooms: 4,
+      floor: 0,
+      elevator: false,
+      balcony: true,
+      parking: true,
+      energyClass: "A",
+      yearBuilt: 2020,
+      yearRenovated: null,
+      charges: 400,
+      propertyTax: 5200,
+      gardenSize: 800,
+      poolSize: "12x6m infinity",
+      terraceSize: 100,
+      features: [
+        "Piscine infinity 12x6m chauffée",
+        "Vue mer panoramique",
+        "Terrasse 100m² avec pergola",
+        "Jardin méditerranéen 800m²",
+        "Cuisine d'été extérieure",
+        "Garage 3 voitures",
+        "Suite parentale avec dressing",
+        "Home cinéma",
+        "Cave à vin climatisée",
+        "Système domotique complet",
+        "Panneaux solaires",
+        "Portail automatique sécurisé"
+      ],
+      images: [
+        "https://images.pexels.com/photos/1438834/pexels-photo-1438834.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ],
+      agent: {
+        name: "Alexandre Rivière",
+        phone: "04 94 97 85 62",
+        email: "alexandre.riviere@immobilier.com"
+      }
     }
   };
 
@@ -278,6 +422,12 @@ const PropertyDetail = () => {
                   <small className="text-muted d-block">Taxe foncière: {property.propertyTax}€/an</small>
                   {property.gardenSize && (
                     <small className="text-muted d-block">Jardin: {property.gardenSize}m²</small>
+                  )}
+                  {property.terraceSize && (
+                    <small className="text-muted d-block">Terrasse: {property.terraceSize}m²</small>
+                  )}
+                  {property.ceilingHeight && (
+                    <small className="text-muted d-block">Hauteur plafond: {property.ceilingHeight}</small>
                   )}
                   {property.poolSize && (
                     <small className="text-muted d-block">Piscine: {property.poolSize}</small>

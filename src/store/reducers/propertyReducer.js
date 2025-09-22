@@ -34,12 +34,45 @@ const initialState = {
       surface: 150,
       rooms: 5,
       bedrooms: 4
+    },
+    {
+      id: 4,
+      title: "Appartement avec terrasse",
+      price: 520000,
+      location: "Lyon 6ème",
+      description: "Superbe appartement de 110m² avec grande terrasse de 30m² et vue panoramique sur la ville",
+      image: "https://images.pexels.com/photos/2029541/pexels-photo-2029541.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 110,
+      rooms: 4,
+      bedrooms: 3
+    },
+    {
+      id: 5,
+      title: "Loft industriel",
+      price: 680000,
+      location: "Marseille Vieux-Port",
+      description: "Magnifique loft de 130m² dans ancien entrepôt rénové, hauteur sous plafond 4m",
+      image: "https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 130,
+      rooms: 3,
+      bedrooms: 2
+    },
+    {
+      id: 6,
+      title: "Villa contemporaine",
+      price: 1200000,
+      location: "Saint-Tropez",
+      description: "Villa d'architecte de 200m² avec piscine infinity et vue mer exceptionnelle",
+      image: "https://images.pexels.com/photos/1438834/pexels-photo-1438834.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 200,
+      rooms: 6,
+      bedrooms: 5
     }
   ],
   currentProperty: null,
   loading: false,
   error: null,
-  totalCount: 3,
+  totalCount: 6,
   currentPage: 1,
   totalPages: 1,
 };
