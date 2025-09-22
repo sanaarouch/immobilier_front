@@ -57,7 +57,6 @@ const Inscription = () => {
         <h3>S'inscrire</h3>
         
         {error && <Alert variant="danger">{error}</Alert>}
-        }
         
         <div className={styles.formGroup}>
           <FormLabel>Nom</FormLabel>
