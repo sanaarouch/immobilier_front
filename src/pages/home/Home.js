@@ -28,7 +28,7 @@ const Home = () => {
         <div className="alert alert-danger" role="alert">
           <h4>Problème de connexion à l'API</h4>
           <p>Erreur: {error}</p>
-          <p>Vérifiez que votre serveur backend fonctionne sur <code>http://localhost:2200</code></p>
+          <p>Vérifiez que votre serveur backend fonctionne sur <code>http://localhost:3001</code></p>
         </div>
       </Container>
     );
