@@ -6,6 +6,8 @@ import store from '../store/store';
 import Home from '../pages/Home/Home';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import Login from '../components/Login/Login';
+import Inscription from '../components/Inscription/inscription';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -21,6 +23,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/properties" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/inscription" element={<Inscription />} />
                 <Route path="*" element={
                   <Container className="text-center mt-5">
                     <h2>Page non trouvée</h2>

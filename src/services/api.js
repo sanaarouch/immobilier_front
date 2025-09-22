@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Configuration de base pour l'API
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:2200';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -44,47 +44,48 @@ api.interceptors.response.use(
 
 // Services API pour les propriétés
 export const propertyService = {
-  getAll: (params = {}) => api.get('/properties', { params }),
-  getById: (id) => api.get(`/properties/${id}`),
-  create: (data) => api.post('/properties', data),
-  update: (id, data) => api.put(`/properties/${id}`, data),
-  delete: (id) => api.delete(`/properties/${id}`),
-  search: (searchParams) => api.get('/properties/search', { params: searchParams }),
-  getByLocation: (location) => api.get(`/properties/location/${location}`),
+  getAll: (params = {}) => api.get('/house', { params }),
+  getById: (id) => api.get(`/house/${id}`),
+  create: (data) => api.post('/house', data),
+  update: (id, data) => api.put(`/house/${id}`, data),
+  delete: (id) => api.delete(`/house/${id}`),
+  search: (searchParams) => api.get('/house/search', { params: searchParams }),
+  getByLocation: (location) => api.get(`/house/location/${location}`),
 };
 
 // Services API pour l'authentification
 export const authService = {
-  login: (credentials) => api.post('/auth/login', credentials),
-  register: (userData) => api.post('/auth/register', userData),
-  logout: () => api.post('/auth/logout'),
-  getProfile: () => api.get('/auth/profile'),
-  refreshToken: () => api.post('/auth/refresh'),
-  forgotPassword: (email) => api.post('/auth/forgot-password', { email }),
-  resetPassword: (token, password) => api.post('/auth/reset-password', { token, password }),
+  login: (email, password) => api.post('/security/signin', { email, password }),
+  register: (userData) => api.post('/security/signup', userData),
+  logout: () => api.post('/security/logout'),
+  getProfile: () => api.get('/security/profile'),
+  refreshToken: () => api.post('/security/refresh'),
+  forgotPassword: (email) => api.post('/security/forgot-password', { email }),
+  resetPassword: (token, password) => api.post('/security/reset-password', { token, password }),
 };
 
 // Service pour les utilisateurs
 export const userService = {
-  getProfile: () => api.get('/users/profile'),
-  updateProfile: (data) => api.put('/users/profile', data),
-  getFavorites: () => api.get('/users/favorites'),
-  addFavorite: (propertyId) => api.post('/users/favorites', { propertyId }),
-  removeFavorite: (propertyId) => api.delete(`/users/favorites/${propertyId}`),
+  getProfile: () => api.get('/user/profile'),
+  updateProfile: (data) => api.put('/user/profile', data),
+  getFavorites: () => api.get('/user/favorites'),
+  addFavorite: (propertyId) => api.post('/user/favorites', { propertyId }),
+  removeFavorite: (propertyId) => api.delete(`/user/favorites/${propertyId}`),
+  getAll: () => api.get('/user'),
+  getById: (id) => api.get(`/user/${id}`),
+  create: (userData) => api.post('/user', userData),
+  update: (id, userData) => api.put(`/user/${id}`, userData),
+  delete: (id) => api.delete(`/user/${id}`),
 };
 
-// Service pour les images
-export const imageService = {
-  upload: (file) => {
-    const formData = new FormData();
-    formData.append('image', file);
-    return api.post('/images/upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-  },
-  delete: (imageId) => api.delete(`/images/${imageId}`),
+// Service pour les commandes
+export const orderService = {
+  getAll: () => api.get('/order'),
+  getById: (id) => api.get(`/order/${id}`),
+  create: (orderData) => api.post('/order', orderData),
+  update: (id, orderData) => api.put(`/order/${id}`, orderData),
+  delete: (id) => api.delete(`/order/${id}`),
+  getByUser: (userId) => api.get(`/order/user/${userId}`),
 };
 
 export default api;

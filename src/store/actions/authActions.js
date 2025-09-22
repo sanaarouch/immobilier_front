@@ -13,7 +13,7 @@ export const login = (credentials) => {
     dispatch(authStart());
     
     try {
-      const response = await authService.login(credentials);
+      const response = await authService.login(credentials.email, credentials.password);
       const { token, user } = response.data;
       
       localStorage.setItem('authToken', token);
