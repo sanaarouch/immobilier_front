@@ -37,6 +37,7 @@ const Login = () => {
         <h3>Se connecter</h3>
         
         {error && <Alert variant="danger">{error}</Alert>}
+        }
         
         <div className={styles.formGroup}>
           <FormLabel>Email</FormLabel>
