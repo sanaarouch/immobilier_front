@@ -297,7 +297,7 @@ const PropertyDetail = () => {
       setProperty(propertyData);
     }
     setLoading(false);
-  }, [id]);
+  }, [id, propertiesData]);
 
   if (loading) {
     return (
@@ -343,7 +343,7 @@ const PropertyDetail = () => {
                     <img
                       className="d-block w-100"
                       src={image}
-                      alt={`${property.title} - Photo ${index + 1}`}
+                      alt={`${property.title} ${index + 1}`}
                       style={{ height: '400px', objectFit: 'cover' }}
                     />
                   </Carousel.Item>

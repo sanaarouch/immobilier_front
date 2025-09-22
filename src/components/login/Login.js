@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../store/actions/authActions';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => 
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
