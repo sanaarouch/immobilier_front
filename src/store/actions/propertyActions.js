@@ -1,4 +1,4 @@
-import { propertyService } from '../services/api';
+import { propertyService } from '../../services/api';
 
 // Types d'actions
 export const FETCH_PROPERTIES_START = 'FETCH_PROPERTIES_START';
