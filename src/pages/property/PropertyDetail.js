@@ -295,7 +295,7 @@ const PropertyDetail = () => {
                 </div>
 
                 <div className="d-grid gap-2">
-                  <Button variant="primary" size="lg">
+                  <Button variant="primary" size="lg" onClick={() => navigate('/contact')}>
                     Contacter l'agent
                   </Button>
                   <Button variant="outline-primary">

@@ -9,6 +9,7 @@ import Footer from '../components/footer/Footer';
 import PropertyDetail from '../pages/property/PropertyDetail';
 import Login from '../components/login/Login';
 import Inscription from '../components/inscription/inscription';
+import Contact from '../pages/contact/Contact';
 import ErrorBoundary from '../components/errorboundary/ErrorBoundary';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/property/:id" element={<PropertyDetail />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/inscription" element={<Inscription />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={
                   <Container className="text-center mt-5">
                     <h2>Page non trouvée</h2>

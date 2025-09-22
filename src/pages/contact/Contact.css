@@ -1,0 +1,45 @@
+.contact-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.contact-info {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.contact-info .text-primary {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  min-width: 30px;
+}
+
+.team-member {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.team-member:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-info .text-primary {
+    margin-bottom: 0.5rem;
+  }
+}
