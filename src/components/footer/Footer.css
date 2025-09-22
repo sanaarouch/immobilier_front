@@ -1,19 +1,9 @@
 .custom-footer {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  border-top: 3px solid #007bff;
   position: relative;
   overflow: hidden;
 }
 
-.custom-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #007bff, transparent);
-}
 
 .footer-content {
   position: relative;
