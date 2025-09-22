@@ -106,7 +106,7 @@ const SearchModal = ({ show, onHide, onSearch }) => {
           </Row>
 
           <Row className="mb-3">
-            <Col md={4}>
+            <Col md={6}>
               <Form.Group>
                 <Form.Label>Surface minimum (m²)</Form.Label>
                 <Form.Control
@@ -119,7 +119,7 @@ const SearchModal = ({ show, onHide, onSearch }) => {
                 />
               </Form.Group>
             </Col>
-            <Col md={4}>
+            <Col md={6}>
               <Form.Group>
                 <Form.Label>Nombre de pièces</Form.Label>
                 <Form.Select
@@ -136,7 +136,10 @@ const SearchModal = ({ show, onHide, onSearch }) => {
                 </Form.Select>
               </Form.Group>
             </Col>
-            <Col md={4}>
+          </Row>
+
+          <Row className="mb-3">
+            <Col md={12}>
               <Form.Group>
                 <Form.Label>Nombre de chambres</Form.Label>
                 <Form.Select
