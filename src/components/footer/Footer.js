@@ -73,8 +73,6 @@ const Footer = () => {
           </Row>
         </div>
         
-        <hr className="footer-divider" />
-        
         <div className="footer-bottom">
           <Row className="align-items-center">
             <Col md={6}>
