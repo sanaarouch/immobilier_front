@@ -224,6 +224,24 @@ const Contact = () => {
                   <small className="text-muted">Conseillère Cannes</small><br />
                   <small>sophie.leroy@immobilier.com</small>
                 </div>
+
+                <div className="team-member mb-3">
+                  <strong>Jean Dupont</strong><br />
+                  <small className="text-muted">Conseiller Lyon</small><br />
+                  <small>jean.dupont@immobilier.com</small>
+                </div>
+
+                <div className="team-member mb-3">
+                  <strong>Amélie Moreau</strong><br />
+                  <small className="text-muted">Conseillère Marseille</small><br />
+                  <small>amelie.moreau@immobilier.com</small>
+                </div>
+
+                <div className="team-member">
+                  <strong>Alexandre Rivière</strong><br />
+                  <small className="text-muted">Conseiller Saint-Tropez</small><br />
+                  <small>alexandre.riviere@immobilier.com</small>
+                </div>
               </Card.Body>
             </Card>
           </Col>
