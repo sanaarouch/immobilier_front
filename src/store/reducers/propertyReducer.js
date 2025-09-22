@@ -1,75 +1,108 @@
-import {
-  FETCH_PROPERTIES_START,
-  FETCH_PROPERTIES_SUCCESS,
-  FETCH_PROPERTIES_ERROR,
-  FETCH_PROPERTY_START,
-  FETCH_PROPERTY_SUCCESS,
-  FETCH_PROPERTY_ERROR,
-  CREATE_PROPERTY_START,
-  CREATE_PROPERTY_SUCCESS,
-  CREATE_PROPERTY_ERROR,
-} from '../actions/propertyActions';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  properties: [],
+  properties: [
+    {
+      id: 1,
+      title: "Appartement moderne",
+      price: 400000,
+      location: "Paris 15ème",
+      description: "Magnifique appartement de 95m² avec 3 pièces et 2 chambres",
+      image: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 95,
+      rooms: 3,
+      bedrooms: 2
+    },
+    {
+      id: 2,
+      title: "Studio lumineux",
+      price: 85000,
+      location: "Nice Centre",
+      description: "Studio de 21m² parfaitement rénové, idéal investissement",
+      image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 21,
+      rooms: 1,
+      bedrooms: 0
+    },
+    {
+      id: 3,
+      title: "Villa avec piscine",
+      price: 800000,
+      location: "Cannes",
+      description: "Villa de 150m² avec piscine et accès direct à la plage",
+      image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400",
+      surface: 150,
+      rooms: 5,
+      bedrooms: 4
+    }
+  ],
   currentProperty: null,
   loading: false,
   error: null,
-  totalCount: 0,
+  totalCount: 3,
   currentPage: 1,
   totalPages: 1,
 };
 
-const propertyReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_PROPERTIES_START:
-    case FETCH_PROPERTY_START:
-    case CREATE_PROPERTY_START:
-      return {
-        ...state,
-        loading: true,
-        error: null,
-      };
+const propertySlice = createSlice({
+  name: 'properties',
+  initialState,
+  reducers: {
+    fetchPropertiesStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    fetchPropertiesSuccess: (state, action) => {
+      state.loading = false;
+      state.properties = action.payload.properties || action.payload;
+      state.totalCount = action.payload.totalCount || action.payload.length;
+      state.currentPage = action.payload.currentPage || 1;
+      state.totalPages = action.payload.totalPages || 1;
+      state.error = null;
+    },
+    fetchPropertiesError: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    fetchPropertyStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    fetchPropertySuccess: (state, action) => {
+      state.loading = false;
+      state.currentProperty = action.payload;
+      state.error = null;
+    },
+    fetchPropertyError: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    createPropertyStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    createPropertySuccess: (state, action) => {
+      state.loading = false;
+      state.properties = [action.payload, ...state.properties];
+      state.error = null;
+    },
+    createPropertyError: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+  },
+});
 
-    case FETCH_PROPERTIES_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        properties: action.payload.properties || action.payload,
-        totalCount: action.payload.totalCount || action.payload.length,
-        currentPage: action.payload.currentPage || 1,
-        totalPages: action.payload.totalPages || 1,
-        error: null,
-      };
+export const {
+  fetchPropertiesStart,
+  fetchPropertiesSuccess,
+  fetchPropertiesError,
+  fetchPropertyStart,
+  fetchPropertySuccess,
+  fetchPropertyError,
+  createPropertyStart,
+  createPropertySuccess,
+  createPropertyError,
+} = propertySlice.actions;
 
-    case FETCH_PROPERTY_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        currentProperty: action.payload,
-        error: null,
-      };
-
-    case CREATE_PROPERTY_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        properties: [action.payload, ...state.properties],
-        error: null,
-      };
-
-    case FETCH_PROPERTIES_ERROR:
-    case FETCH_PROPERTY_ERROR:
-    case CREATE_PROPERTY_ERROR:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload,
-      };
-
-    default:
-      return state;
-  }
-};
-
-export default propertyReducer;
+export default propertySlice.reducer;
