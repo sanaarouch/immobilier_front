@@ -94,30 +94,6 @@ const Header = () => {
           </Col>
         </Row>
         
-        {/* Mobile Toggle */}
-        <Navbar.Toggle aria-controls="mobile-navbar-nav" className="d-lg-none" />
-        <Navbar.Collapse id="mobile-navbar-nav" className="d-lg-none">
-          <Nav className="w-100 text-center mt-2">
-            <LinkContainer to="/">
-              <Nav.Link className="nav-link-mobile">
-                <FaHome className="me-1" />
-                Accueil
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/properties">
-              <Nav.Link className="nav-link-mobile">
-                <FaBuilding className="me-1" />
-                Propriétés
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/contact">
-              <Nav.Link className="nav-link-mobile">
-                <FaEnvelope className="me-1" />
-                Contact
-              </Nav.Link>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
