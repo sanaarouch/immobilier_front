@@ -97,26 +97,22 @@ const Header = () => {
         {/* Mobile Toggle */}
         <Navbar.Toggle aria-controls="mobile-navbar-nav" className="d-md-none" />
         <Navbar.Collapse id="mobile-navbar-nav" className="d-md-none">
-          <Nav className="w-100 text-center mt-2">
-            <LinkContainer to="/">
-              <Nav.Link className="nav-link-mobile">
-                <FaHome className="me-1" />
-                Accueil
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/properties">
-              <Nav.Link className="nav-link-mobile">
-                <FaBuilding className="me-1" />
-                Propriétés
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/contact">
-              <Nav.Link className="nav-link-mobile">
-                <FaEnvelope className="me-1" />
-                Contact
-              </Nav.Link>
-            </LinkContainer>
-          </Nav>
+          {!isAuthenticated && (
+            <Nav className="w-100 text-center mt-2">
+              <LinkContainer to="/login">
+                <Nav.Link className="nav-link-mobile">
+                  <FaSignInAlt className="me-1" />
+                  Connexion
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/inscription">
+                <Nav.Link className="nav-link-mobile">
+                  <FaUserPlus className="me-1" />
+                  Inscription
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
